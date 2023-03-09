@@ -1,0 +1,31 @@
+<%= render 'header' %>
+<div class="container">
+  <div class="row movi-display">
+    <div class="col-lg-6">
+      <img class="img-display-poster" src="<%= @movi.poster_url %>" >
+    </div>
+    <div class="col-lg-6 movi-display-content">
+      <div class="movi-header-content">
+        <p class="movi-title"><%= @movi.title %></p>
+        <p class="btn-movi-edit"><%= link_to "Edit movie", edit_movi_path(@movi) %></p>
+      </div>
+      <div>
+        <p><span class="movi-rating"><%= @movi.rating %></span></p>
+      </div>
+      <p>
+        <%= @movi.overview %>
+      </p>
+      <div>
+        <iframe
+            width="500"
+            height="315"
+            src="https://www.youtube.com/embed/<%= @movi.trailer %>"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
